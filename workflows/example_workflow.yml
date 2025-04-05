@@ -1,0 +1,15 @@
+name: "area_analysis_workflow"
+steps:
+  - taskType: "polygonArea"
+    stepNumber: 1
+    description: "Calculate the area of the input polygon"
+
+  - taskType: "analysis"
+    stepNumber: 2
+    dependsOn: "1"
+    description: "Analyze the polygon's location"
+
+  - taskType: "reportGeneration"
+    stepNumber: 3
+    dependsOn: "2"
+    description: "Generate a final report combining all results" 
